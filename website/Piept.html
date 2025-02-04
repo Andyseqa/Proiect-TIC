@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proiect TIC Anatomie : Corpul Uman : Circulația Sanguină</title>
@@ -10,22 +11,26 @@
             background-color: #121212;
             color: #ffffff;
         }
+
         header {
             background-color: #1f1f1f;
             padding: 20px;
             text-align: center;
             border-bottom: 2px solid #333333;
         }
+
         header h1 {
             margin: 0;
             font-size: 2rem;
         }
+
         nav {
             display: flex;
             justify-content: center;
             padding: 10px 0;
             background-color: #1a1a1a;
         }
+
         nav a {
             color: #ffffff;
             text-decoration: none;
@@ -33,13 +38,16 @@
             font-size: 1rem;
             transition: color 0.3s ease;
         }
+
         nav a:hover {
             color: #139c12;
         }
+
         main {
             padding: 20px;
             text-align: center;
         }
+
         .info-box {
             display: none;
             margin-top: 20px;
@@ -47,10 +55,12 @@
             padding: 20px;
             border-radius: 10px;
         }
+
         .debug-buttons {
             margin-top: 20px;
             text-align: center;
         }
+
         .debug-buttons button {
             margin: 5px;
             padding: 10px 20px;
@@ -61,9 +71,11 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         .debug-buttons button:hover {
             background-color: #139c12;
         }
+
         .debug-output {
             margin-top: 20px;
             padding: 15px;
@@ -73,10 +85,12 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            display: none; /* Ascundem output-ul inițial */
+            display: none;
+            /* Ascundem output-ul inițial */
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Proiect TIC Anatomie : Corpul Uman : Circulația Sanguină</h1>
@@ -87,32 +101,39 @@
     </nav>
     <main>
         <h2>Cum circulă sângele în corp</h2>
-        <img id="circulatory-image" src="Imagini/circulatory-system.jpg" usemap="#circulationMap" alt="Diagram of the Circulatory System">
-        <map name="circulationMap">
-            <!-- Inima -->
-            <area shape="circle" coords="150,200,50" alt="Inimă" onclick="showInfo('heart')">
-            <!-- Plămâni -->
-            <area shape="rect" coords="50,100,200,180" alt="Plămâni" onclick="showInfo('lungs')">
-            <!-- Sistem vascular -->
-            <area shape="poly" coords="100,300,200,300,150,400" alt="Sistem Vascular" onclick="showInfo('vascular')">
+        <img src="Imagini/Sistem_circulator.jpg" usemap="#image-map">
+
+        <map name="image-map">
+            <area target="" alt="Plaman" title="Plaman" onclick="showInfo('lungs')"
+                coords="665,196,628,147,600,141,571,135,537,154,521,174,486,195,471,220,457,239,437,268,432,293,412,319,398,335,395,362,378,398,366,428,351,469,342,505,330,527,330,563,335,583,338,610,345,648,343,684,347,713,354,729,357,776,365,817,378,848,382,863,387,874,424,874,460,873,508,873,555,869,615,864,643,848,657,829,657,810,645,796,645,784,656,772,672,758,674,722,684,708,668,663,665,644,649,629,632,583,632,554,632,533,635,508,643,486,653,463,659,440,669,403,673,375,676,334,676,270"
+                shape="poly">
+            <area target="" alt="Plaman" title="Plaman" onclick="showInfo('lungs')"
+                coords="868,139,921,134,924,146,952,159,965,172,989,193,1002,213,1021,233,1038,250,1051,271,1067,303,1079,328,1089,362,1103,395,1119,420,1132,461,1145,499,1148,531,1153,556,1153,593,1148,637,1145,669,1145,702,1138,764,1142,734,1127,822,1125,844,1113,866,1105,886,1088,893,1059,883,1010,883,956,879,925,879,864,867,835,853,835,824,835,801,863,799,894,797,912,776,927,745,938,695,938,655,934,619,929,588,908,564,908,543,914,513,910,496,902,480,894,462,881,447,852,417,844,385,831,347,816,327,816,294,816,255,824,215,838,184"
+                shape="poly">
+            <area target="" alt="Inima" title="Inima" onclick="showInfo('heart')"
+                coords="817,318,796,321,770,323,739,335,718,353,694,372,681,402,674,429,669,456,651,470,640,488,637,515,627,535,632,567,639,591,648,610,661,631,669,651,680,674,685,701,701,721,711,731,738,750,756,761,807,774,860,791,898,790,911,759,923,710,929,669,925,602,907,570,898,501,866,447,844,417,833,371,828,350"
+                shape="poly">
         </map>
 
         <!-- Informații despre inimă -->
         <div id="heart-info" class="info-box">
             <h3>Inimă</h3>
-            <p>Inima este motorul principal al circulației sanguine. Sângele oxidat ajunge la inimă prin venele pulmonare și este pompat către plămâni pentru oxigenare.</p>
+            <p>Inima este motorul principal al circulației sanguine. Sângele oxidat ajunge la inimă prin venele
+                pulmonare și este pompat către plămâni pentru oxigenare.</p>
         </div>
 
         <!-- Informații despre plămâni -->
         <div id="lungs-info" class="info-box">
             <h3>Plămâni</h3>
-            <p>În plămâni, sângele primite din inimă este oxigenat. Sângele oxigenat revine la inimă și este distribuit prin artera principală spre restul corpului.</p>
+            <p>În plămâni, sângele primite din inimă este oxigenat. Sângele oxigenat revine la inimă și este distribuit
+                prin artera principală spre restul corpului.</p>
         </div>
 
         <!-- Informații despre sistem vascular -->
         <div id="vascular-info" class="info-box">
             <h3>Sistem Vascular</h3>
-            <p>Sistemul vascular include artere, vene și capilare. Arterele transportă sângele oxigenat spre organe, iar venele aduc sângele neoxigenat înapoi la inimă.</p>
+            <p>Sistemul vascular include artere, vene și capilare. Arterele transportă sângele oxigenat spre organe, iar
+                venele aduc sângele neoxigenat înapoi la inimă.</p>
         </div>
 
         <!-- Buton de debug -->
@@ -191,4 +212,5 @@
         }
     </script>
 </body>
+
 </html>
