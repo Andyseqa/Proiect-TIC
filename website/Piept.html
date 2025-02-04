@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proiect TIC Anatomie : Corpul Uman : Despre Noi</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #333333;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            background-color: #1a1a1a;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #139c12;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .lung-info {
+            display: none;
+            margin-top: 20px;
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Proiect TIC Anatomie : Corpul Uman : Plamanul </h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <main>
+        <h2>Diagram of the Lungs</h2>
+        <img src="Imagini/img2.jpg" usemap="#lungmap" alt="Diagram of the Lungs">
+        <map name="lungmap">
+            <area shape="rect" coords="34,44,270,350" alt="Left Lung" onclick="showInfo('left')">
+            <area shape="rect" coords="290,44,526,350" alt="Right Lung" onclick="showInfo('right')">
+        </map>
+        <div id="left-lung-info" class="lung-info">
+            <h3>Plamanul Stang</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio animi quo, ratione ipsum nostrum maiores vero voluptatum sunt a excepturi rem ex voluptas sequi voluptates id dolorum quod nam labore!...</p>
+        </div>
+        <div id="right-lung-info" class="lung-info">
+            <h3>Plamanul Drept</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum possimus quas aliquid. Illum doloremque consequatur nihil quos recusandae optio dolor corporis porro temporibus harum sunt, ratione aperiam facere. In, quasi....</p>
+        </div>
+    </main>
+    <script>
+        function showInfo(lung) {
+            document.getElementById('left-lung-info').style.display = 'none';
+            document.getElementById('right-lung-info').style.display = 'none';
+            if (lung === 'left' || lung === 'right') {
+                document.getElementById(lung + '-lung-info').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
